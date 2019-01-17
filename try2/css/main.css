@@ -1,0 +1,328 @@
+/* colours:
+green: #0A7F53 
+pink: #A85753
+blue: #4C29CC
+off-white: #EDE7DD  */
+
+@import url('https://fonts.googleapis.com/css?family=Quicksand:300,400');
+
+* {
+    box-sizing: border-box;
+}
+
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+.wrapper {
+    margin: auto;
+    max-width: 1000px;
+}
+
+body {
+    background-color: rgb(174, 143, 142);
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1em;
+    height: 100%;
+    position: relative;
+}
+
+#eye-area {
+    display: flex;
+    flex-flow: row nowrap;
+    max-width: 1000px;
+    justify-content: center;
+    margin: auto;
+    animation: blink forwards infinite 10s ease;
+}
+
+.eye-container {
+    margin: 75px;
+    width: 175px;
+    height: 175px;
+    background-color: rgb(52, 48, 51);
+    border-radius: 70% 0px;
+    transform: rotate(45deg);
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.lid {
+    background-color: rgb(240, 240, 240);
+    width: 160px;
+    height: 160px;
+    border-radius: 90% 0px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.outer-eyeball {
+    display: flex;
+    text-align: center;
+    position: absolute;
+    border-radius: 50%;
+    height: 90px;
+    width: 90px;
+    background: #A85753;
+    box-shadow: 0.03em 0.13em rgba(0,0,0,0.2);
+}
+.eyes {
+    text-align: center;
+    display: flex;
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    bottom: 10px;
+    right: 9px;
+}
+
+.eye {
+    position: relative;
+    display: inline-block;
+    border-radius: 50%;
+    width: 50%;
+    height: 50%;
+    background-color: black;
+    border-radius: 50%;
+  }
+  
+  .eye:after {
+    --pupil-size: 10px;
+    position: absolute;
+    width: var(--pupil-size);
+    height: var(--pupil-size);
+    background: white;
+    border-radius: 50%;
+    content: " ";
+  }
+
+/* Main Section Styling */
+main {
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+h1 {
+    font-size: 3.5em;
+    text-align: center;
+    text-shadow: 0px -1px 3px rgba(50, 19, 22, 0.55);
+}
+
+#welcome-para {
+    font-size: 1.1em;
+    margin: 50px 20px 0 20px;
+    text-align: center;
+}
+
+button {
+    display: inline-block;
+    border-radius: 10px;
+    border: none;
+    padding: 0.3em 0.5em;
+    margin: 0;
+    text-decoration: none;
+    background: rgb(56, 32, 143);
+    color: #ffffff;
+    font-size: 1em;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out, 
+                transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+button:hover,
+button:focus {
+    background: rgb(101, 86, 155);
+}
+
+button:active {
+    transform: scale(1.05);
+}
+
+/* Footer Section Styling */
+footer {
+    bottom: 0;
+    width: 100%;
+}
+
+h3{
+    margin: 0 20px;
+    font-size: 1em;
+}
+
+/* Contact Modal */
+form {
+    padding: 2em;
+    max-width: 600px;
+    margin: auto;
+    box-shadow: 0 0 1em #222;
+    border-radius: 8px;
+    background-color: rgb(230, 217, 217);
+}
+
+form div {
+    margin: 0 0 0.5em 0;
+    position: relative;
+    padding: 0.5em;
+}
+label {
+    display: block;
+    font-size: 1.3em;
+    margin: 0 0 .5em;
+    color: rgb(11, 10, 10);
+}
+input,
+textarea {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    outline: none;
+    font-size: 1.3em;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: black;
+}
+  
+input[type="text"],
+textarea {
+    background-color: #d7c7c7 !important;
+    border: 1px solid rgb(228, 215, 215);
+    font-size: 1.3em;
+    padding: .8em .5em;
+    border-radius: 5px;
+}
+
+textarea {
+    resize: none;
+    background: #d7c7c7 !important;
+    border: 0 none;
+    height: 300px;
+    font-size: 1.3em !important;
+}
+input[type="text"]:focus,
+textarea:focus {
+    background: rgb(250, 246, 246) !important;
+}
+#valid-email {
+    border-radius: 5px;
+    display: none;
+    font-size: 1.3em;
+    text-align: center;
+    background: rgb(208, 42, 45);
+    padding: 7px 10px;
+    color: #fff;
+}
+
+#error {
+    display: none;
+}
+
+#form-btns {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+}
+
+#form-btns button {
+    box-shadow: 0 3px 0 0 rgb(18, 2, 33);
+    border: none;
+    color: #fff;
+    display: block;
+    font-size: 1.5em;
+    line-height: 1.6em;
+    margin: auto;
+    padding: .5em;
+    text-shadow: 0 2.5px rgb(8, 5, 5);
+  }
+
+button[type=submit] {
+    background-color: rgb(184, 30, 30);
+}
+
+button[type=submit]:focus,
+button[type=submit]:hover {
+    background-color: rgb(157, 88, 88);
+}
+
+
+@media only screen and (max-width: 800px) {
+    
+    .wrapper{
+        max-width: 600px;
+    }
+    
+    h1 {
+        font-size: 2em;
+    }
+    
+    .eye-container {
+        width: 106px;
+        height: 106px;
+        margin: 40px;
+        border-radius: 70% 0px;
+    }
+
+    .lid {
+        border-radius: 100% 0px;
+        width: 100px;
+        height: 100px;
+    }
+    .outer-eyeball {
+        height: 50px;
+        width: 50px;
+    }
+    .eyes {
+        width: 30px;
+        height: 30px;
+    }
+    .eye:after {
+        --pupil-size: 5px;
+    }
+    form {
+        padding: 0.5em;
+        max-width: 350px;
+    }
+    label {
+        font-size: 1em;
+        margin: 0 0 .5em;
+    }
+
+    #valid-email {
+        font-size: 1em;
+    }
+
+    input[type="text"],
+    textarea {
+        font-size: 1em;
+        padding: .8em .5em;
+    }
+    textarea {
+        font-size: 1em !important;
+    }
+    #form-btns button {
+        font-size: 1em;
+    }
+    footer {
+        margin-top: 15px;
+    }
+  }
+
+  /* Animations */
+
+  @keyframes blink {
+    0%, 2%, 60%, 62%, 100% { transform: scaleX(1) scaleY(1); } 
+    1%, 61% { transform: scaleX(1.1) scaleY(0.1); } 
+  }
+
+  
