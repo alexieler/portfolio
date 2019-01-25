@@ -1,3 +1,6 @@
+<?php 
+  include "header.php";
+?>
 <?php
 // import the PHPMailer class into the global namespace
 use PHPMailer\PHPMailer\PHPMailer;
@@ -64,24 +67,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
       echo "Mailer Error: " . $mail->ErrorInfo;
       exit;
   }
-  header("location:index.php?status=thanks");
+  header("location:contact.php?status=thanks");
 }
 ?>
   <main>
     <?php if (isset($_GET["status"]) && $_GET["status"] == "thanks") {
-      echo  "<h1>Thank you so much for the email! I'll try to get back to you as soon as possible.</h1>";
+      echo  "<h2>Thank you so much for the email! I'll try to get back to you as soon as possible.</h2>";
     } else { ?>
+    <!-- There seems to be a problem with window.onload because when the page loads again you'll never see the success message -->
       <div class="wrapper">
           <div id="intro">
-            <h1>Welcome/Bienvenue!</h1>
+              <h1 id="contact-heading">GET IN TOUCH</h1>
               <div id="welcome-para">
-                <p>I'm currently adding some last minute touches to my website.
-          In the meantime feel free to <button type="button" id="contact-btn">contact me</button>, and we can continue our conversation there. 
+                <p>I'm currently looking for a summer internship to complete my program. 
+          If you would like to discuss internships, possible work or overall get to know me, feel free to <button type="button" id="contact-btn">contact me</button>, and we can continue our conversation there. 
           Possibly grab a coffee?</p>
               </div>
           </div>
-          <div class="myModal">
-              <form id="contact-form" method="post" action="index.php">
+        <div class="myModal" id="modal">
+              <form id="contact-form" method="post" action="contact.php">
                   <div>
                       <label for="name">Name</label>
                       <input id="name" name="name" type="text" placeholder="Your Name">
@@ -111,3 +115,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
       <?php } ?>
     </div>
   </main>
+<?php 
+  include "footer.php";
+?>
+<script type="text/javascript" src="jss/contact.js?2"></script>
